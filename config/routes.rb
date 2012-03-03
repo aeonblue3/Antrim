@@ -1,4 +1,6 @@
 Antrim::Application.routes.draw do
+  resources :ballots
+
   get "home/index"
 
   resources :posts
