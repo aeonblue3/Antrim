@@ -6,4 +6,12 @@
 		=javascript_include_tag "application"
 		=csrf_meta_tags
 	%body
-		=yield
+		#main_container
+			%header{:id => "main-header"}
+				%h1{:id => "logo"} Antrim Glen
+				%h2{:id => "slogan"} Your Slogan Rocks
+			%nav{:id => "main-menu"}
+				=link_to "Blog Posts", posts_path
+				=link_to "Ballots", ballots_path
+			#content
+				=yield

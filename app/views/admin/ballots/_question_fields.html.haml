@@ -1,0 +1,9 @@
+%p
+	=f.label :question_text, "Question"
+	%br/
+	=f.text_area :question_text, row: 3
+	%br/
+	=f.link_to_remove "Remove"
+=f.fields_for :answers
+%p
+	=f.link_to_add "Add an answer", :answers

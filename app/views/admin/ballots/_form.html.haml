@@ -1,0 +1,27 @@
+=semantic_nested_form_for(@ballot) do |f|
+	-if @ballot.errors.any?
+		#error_explanation
+			%h2
+				=pluralize(@ballot.errors.count, "error")
+				prohibited this ballot from being saved:
+			%ul
+				-@ballot.errors.full_messages.each do |msg|
+					%li
+						=msg
+	.field
+		=f.label :name
+		%br/
+		=f.text_field :name
+	.field
+		=f.label :start
+		%br/
+		=f.datetime_select :start
+	.field
+		=f.label :end
+		%br/
+		=f.datetime_select :end
+	=f.fields_for :questions
+	%p
+		=f.link_to_add "Add a question", :questions
+	.actions
+		= f.submit

@@ -1,9 +1,9 @@
 Antrim::Application.routes.draw do
-  resources :ballots
+  resources :ballots, :only => [:index, :show]
 
   get "home/index"
 
-  resources :posts
+  resources :posts, :only => [:index, :show]
 
   ActiveAdmin.routes(self)
 

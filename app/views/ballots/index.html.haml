@@ -1,0 +1,17 @@
+%h1 Listing ballots
+%table
+	%tr
+		%th Name
+		%th Start
+		%th End
+		%th
+		-@ballots.each do |ballot|
+			%tr
+				%td
+					=ballot.name
+				%td
+					=ballot.start
+				%td
+					=ballot.end
+				%td
+					=link_to 'Show', ballot
