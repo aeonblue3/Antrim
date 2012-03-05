@@ -21,4 +21,10 @@ class BallotsController < InheritedResources::Base
       format.json { render json: @ballot }
     end
   end
+  def update
+    params[:answer].each do |thisId, thisValue|
+      thisAnswer = Answer.find [thisId]
+      @message = thisAnswer
+    end
+  end
 end

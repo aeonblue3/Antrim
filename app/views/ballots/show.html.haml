@@ -21,7 +21,7 @@
 						=q.question_text
 						%br/
 						-q.answers.each do |a|
-							=radio_button_tag("question_#{q.id}", a.answer_text)
+							=radio_button_tag("answer[#{a.id}]", a.answer_text)
 							=label_tag(a.answer_text)
 							%br/
 			=submit_tag "Submit"

@@ -3,6 +3,8 @@ Antrim::Application.routes.draw do
 
   get "home/index"
 
+  match "/ballots/:id" => "ballots#update"
+  
   resources :posts, :only => [:index, :show]
 
   ActiveAdmin.routes(self)
