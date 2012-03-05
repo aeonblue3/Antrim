@@ -13,6 +13,10 @@
 		%br/
 		=f.text_field :name
 	.field
+		=f.label :description
+		%br/
+		=f.text_area :description, :rows => 40, :cols => 120
+	.field
 		=f.label :start
 		%br/
 		=f.datetime_select :start
