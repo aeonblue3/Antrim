@@ -1,4 +1,8 @@
 class BallotsController < InheritedResources::Base
+  def index
+    #@ballot = Ballot.find :all, :conditions => ["start < ?", 1.minute.ago]
+    @ballot = Ballot.where("start < :today AND end > :today", {:today => Time.now})
+  end
   def new
     @ballot = Ballot.new
     
