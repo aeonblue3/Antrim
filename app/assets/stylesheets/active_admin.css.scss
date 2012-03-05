@@ -4,3 +4,22 @@
 
 // To customize the Active Admin interfaces, add your
 // styles here:
+.add_nested_fields {
+	padding: 3px 3px 3px 20px;
+	background: url('add_tag.png') 0px 2px no-repeat;
+	color: #333;
+	text-shadow: 1px, 1px, 1px, rgba(0, 0, 0, 0.4);
+	font-weight: bold;
+	text-decoration: none;
+}
+.remove_nested_fields {
+	background: url('error.gif') 0px 2px no-repeat;
+	padding: 3px 3px 3px 20px;
+	color: #333;
+	text-shadow: 1px, 1px, 1px, rgba(0, 0, 0, 0.4);
+	font-weight: bold;
+	text-decoration: none;
+}
+.remove_nested_fields:hover, .add_nested_fields:hover {
+		text-decoration: underline;
+}

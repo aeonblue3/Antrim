@@ -1,3 +1,3 @@
 ActiveAdmin.register Ballot do
-  form :partial =>"form"
+  form :partial => "form"
 end

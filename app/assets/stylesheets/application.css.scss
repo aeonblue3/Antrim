@@ -24,7 +24,6 @@ html {
 	margin: 0;
 }
 body {
-  background: url("bg.png") repeat;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -61,11 +60,16 @@ nav {
 
 }
 #main-menu {
-
+	
+	padding: 10px 5px;
+	border-radius: 3px;
+	background: #444;
+	border: 1px solid #777;
 	a {
 		text-decoration: none;
-		color: rgb(25, 31, 30);
-		text-shadow: 0px 1px 1px rgb(225, 225, 225);
+		color: #bbb;
+		font-weight: bold;
+		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
 		padding: 3px;
 		margin:0;
 		-webkit-border-radius: 5px;
@@ -77,8 +81,7 @@ nav {
 		transition: all .3s ease-in-out;
 	}
 	a:hover {
-		color: rgb(25, 31, 30);
 		background: rgba(0, 0, 0, 0.3);	
-		text-shadow: 0px 1px 1px rgb(174, 211, 206);
+		font-weight: bold;
 	}
 }

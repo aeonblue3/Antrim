@@ -1,3 +1,20 @@
 // Place all the styles related to the Ballots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#ballot {
+	padding: 10px 5px;
+	border: 1px solid #ccc;
+	background: #fff;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+	border-radius: 2px;
+	ul li {
+		list-style: none;
+	}
+}
+.note {
+	padding-left: 5px;
+	font-size: 11px;
+	color: #777;
+	font-variant: italic;
+	float: right;
+}
