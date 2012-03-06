@@ -34,11 +34,6 @@ body {
   margin: 0 auto;
   width: 850px;
 }
-#logo {
-	margin: 0;
-	padding: 0;
-	
-}
 h1 {
 	margin: 0;
 	padding: 0;
@@ -50,10 +45,16 @@ header#main-header {
   width: 850px;
   height: 300px;
   text-align:center;
-  h1 {
+  h1#logo {
 	margin: 0;
-	color: green;
+	color: #DC692E;
+	text-shadow: 0px 0px 10px #000, 0px 0px 10px #000;
+	font-size: 72px;
     font-family: 'Kells SD';
+	padding-top: 200px;
+  }
+  h2#slogan {
+  	color: #333;	  
   }
 }
 nav {
@@ -65,12 +66,13 @@ nav {
 	border-radius: 3px;
 	background: #444;
 	border: 1px solid #777;
+	vertical-align: middle;
 	a {
 		text-decoration: none;
-		color: #bbb;
+		color: #eee;
 		font-weight: bold;
 		text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
-		padding: 3px;
+		padding: 3px 8px;
 		margin:0;
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;
@@ -81,7 +83,17 @@ nav {
 		transition: all .3s ease-in-out;
 	}
 	a:hover {
-		background: rgba(0, 0, 0, 0.3);	
+		background: rgba(255, 255, 255, 0.3);
 		font-weight: bold;
 	}
+	span {
+		float:right;
+		border-left: 1px dotted #eee;
+	}
+}
+.noContent {
+	text-align: center;
+	text-shadow: 1px 1px 0px #fefefe;
+	font-size: 24px;
+	color:#5E6469;
 }
