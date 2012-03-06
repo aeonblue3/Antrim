@@ -1,7 +1,5 @@
 class BallotsController < InheritedResources::Base
   def index
-    
-    #@ballot = Ballot.find :all, :conditions => ["start < ?", 1.minute.ago]
     @ballot = Ballot.where("start < :today AND end > :today", {:today => Time.now})
   end
 
@@ -22,9 +20,19 @@ class BallotsController < InheritedResources::Base
     end
   end
   def update
-    params[:answer].each do |thisId, thisValue|
-      thisAnswer = Answer.find [thisId]
-      @message = thisAnswer
+    @posted = params[:answer]
+    @posted.each do |key, value|
+      a = Answer.find key
+      if a.count.nil?
+        a.count = 1
+      else
+        a.count += 1
+      end
+      if a.save
+        flash[:notice] = "Successfully submitted!"
+      else
+        flash[:notice] = "Failed to submit!"
+      end
     end
   end
 end
