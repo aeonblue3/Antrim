@@ -1,9 +1,16 @@
 class BallotsController < InheritedResources::Base
+  before_filter :authorize, only: [:show, :update]
+  before_filter
+  
   def index
     @ballot = Ballot.where("start < :today AND end > :today", {:today => Time.now})
   end
 
   def show
+    if current_user.ballots.split(':').include?("#{params[:id]}")
+      redirect_to root_url, notice: "You have already voted in this ballot!"
+    end
+    
     @ballot = Ballot.find params[:id]
   end
   def new
@@ -20,6 +27,16 @@ class BallotsController < InheritedResources::Base
     end
   end
   def update
+    if current_user.ballots.nil?
+      current_user.ballots = params[:id]
+      current_user.save
+    elsif current_user.ballots.split(':').include?("#{params[:id]}")
+      redirect_to root_url, notice: "You have already voted in this ballot!"
+    else
+      current_user.ballots += ":#{params[:id]}"
+      current_user.save
+    end
+    
     @posted = params[:answer]
     @posted.each do |key, value|
       a = Answer.find key
@@ -29,9 +46,11 @@ class BallotsController < InheritedResources::Base
         a.count += 1
       end
       if a.save
-        flash[:notice] = "Successfully submitted!"
+        params = nil
+        redirect_to root_url, notice: "Successfully submitted!"
       else
-        flash[:notice] = "Failed to submit!"
+        params = nil
+        redirect_to root_url, notice: "Failed to submit!"
       end
     end
   end

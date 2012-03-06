@@ -13,5 +13,12 @@
 			%nav{:id => "main-menu"}
 				=link_to "Blog Posts", posts_path
 				=link_to "Ballots", ballots_path
+				%span
+					-if current_user
+						=link_to "Log Out", logout_path
+					-else
+						=link_to "Login", login_path
+			-flash.each do |name, msg|
+				=content_tag :div, msg, id: "flash_#{name}"
 			#content
 				=yield

@@ -1,0 +1,8 @@
+%h1 Log In
+=form_tag sessions_path do
+	.field
+		=label_tag :key
+		%br/
+		=text_field_tag :key, params[:key]
+	.actions
+		=submit_tag "Log In"
