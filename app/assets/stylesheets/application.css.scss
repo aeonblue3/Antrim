@@ -38,6 +38,9 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+h2 {
+	margin: 8px 0;
+}
 header#main-header {
   margin: 0px;
   padding: 0px;
@@ -90,6 +93,9 @@ nav {
 		float:right;
 		border-left: 1px dotted #eee;
 	}
+}
+#content {
+	padding: 10px 0;
 }
 .noContent {
 	text-align: center;
