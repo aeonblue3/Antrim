@@ -19,6 +19,7 @@
 					-else
 						=link_to "Login", login_path
 			-flash.each do |name, msg|
-				=content_tag :div, msg, id: "flash_#{name}"
+				%div{:id => "flash_#{name}", :class => "message"}
+					=msg
 			#content
 				=yield
