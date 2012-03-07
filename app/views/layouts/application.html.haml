@@ -11,7 +11,8 @@
 				%h1{:id => "logo"} Antrim Glen
 				%h2{:id => "slogan"} Your Slogan Rocks
 			%nav{:id => "main-menu"}
-				=link_to "Blog Posts", posts_path
+				=link_to "Home", home_index_path
+				=link_to "Blog", posts_path
 				=link_to "Ballots", ballots_path
 				%span
 					-if current_user
@@ -19,6 +20,7 @@
 					-else
 						=link_to "Login", login_path
 			-flash.each do |name, msg|
-				=content_tag :div, msg, id: "flash_#{name}"
+				%div{:id => "flash_#{name}", :class => "message"}
+					=msg
 			#content
 				=yield

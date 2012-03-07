@@ -1,17 +1,8 @@
-%h1 Listing ballots
-%table
-	%tr
-		%th Name
-		%th Start
-		%th End
-		%th
-		-@ballot.each do |ballot|
-			%tr
-				%td
-					=ballot.name
-				%td
-					=ballot.start
-				%td
-					=ballot.end
-				%td
-					=link_to 'Show', ballot
+%h2 Listing ballots
+%div
+	-@ballot.each do |ballot|
+		%p.ballot
+			=link_to ballot.name, ballot
+			%span
+				Expires in 
+				=distance_of_time_in_words_to_now ballot.end
