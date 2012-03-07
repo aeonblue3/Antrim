@@ -46,7 +46,6 @@ class BallotsController < InheritedResources::Base
         a.count += 1
       end
       a.save
-      end
     end
     params = nil
     redirect_to root_url, alert: "Failed to submit!"
