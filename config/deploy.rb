@@ -4,7 +4,7 @@ set :repository,  "git@github.com:aeonblue3/Antrim.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :deploy_to, "home/honey/public_html"
+set :deploy_to, "/home/honey/public_html"
 
 server "expiredhoney.com", :app, :web, :db, :primary => true
 
