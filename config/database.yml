@@ -18,10 +18,10 @@ test:
   pool: 5
   timeout: 5000
 
-  production:
-      adapter: mysql2
-      encoding: utf8
-      database: honey_rails
-      pool: 5
-      username: honey
-      password: 
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: honey_rails
+  pool: 5
+  username: honey
+  password: 
