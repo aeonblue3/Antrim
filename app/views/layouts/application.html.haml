@@ -10,10 +10,8 @@
 		=csrf_meta_tags
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
 	%body
-		#main_container
-			%header{:id => "main-header"}
-				%h1{:id => "logo"} Antrim Glen
-			%div{:class => "navbar navbar-fixed-top"}
+		.container-fluid
+			.navbar.navbar-fixed-top
 				.navbar-inner
 					.container
 						%a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".collapse"}
@@ -34,9 +32,11 @@
 										=link_to "Log Out", logout_path
 									-else
 										=link_to "Login", login_path
-				.row
-					.span8.offset4
-						=yield
+			%header{:id => "main-header"}
+				%h1{:id => "logo"} Antrim Glen
 			-flash.each do |name, msg|
-				%div{:id => "flash_#{name}", :class => "message"}
+				%div{:id => "flash_#{name}", :class => "name message"}
 					=msg
+			.row
+				.span8.offset1
+					=yield
