@@ -8,7 +8,7 @@ Antrim::Application.routes.draw do
 
   resources :ballots, :only => [:index, :show]
 
-  get "home/index"
+  get "home", to: "home#index"
 
   match "/ballots/:id" => "ballots#update"
   
