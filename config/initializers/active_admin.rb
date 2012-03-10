@@ -127,4 +127,9 @@ ActiveAdmin.setup do |config|
   # To load a javascript file:
   # config.register_javascript "/javascripts/tiny_mce/tiny_mce.js"
   config.register_javascript "/javascripts/nested_form.js"
+  config.clear_stylesheets!
+  config.register_stylesheet 'admin/active_admin.css'
+  
+  config.clear_javascripts!
+  config.register_javascript 'admin/active_admin.js'
 end
