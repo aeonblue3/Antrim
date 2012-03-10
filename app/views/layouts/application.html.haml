@@ -40,9 +40,11 @@
 			#main-header
 				%h1#logo Antrim Glen
 			.row
-				.span10.offset2
+				.span8.offset2
 					-flash.each do |name, msg|
-						%div{:id => "flash_#{name}", :class => "name message"}
+						-name == :alert ? type = "error" : type = "success"
+						%div.alert{:class => "alert-#{type}"}
+							%a.close{"data-dismiss" => "alert"} &times;
 							=msg
 					=yield
 	=javascript_include_tag "application"
