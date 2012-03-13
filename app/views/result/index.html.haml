@@ -3,7 +3,8 @@
 %div
 	-@ballots.each do |ballot|
 		%p.ballot
-			=link_to ballot.name, ballot
+			%a{href: "result/#{ballot.id}"}
+				=ballot.name
 			%span
 				Expired 
 				=distance_of_time_in_words_to_now ballot.end 

@@ -11,6 +11,9 @@ class ResultControllerTest < ActionController::TestCase
     assert_response :success
   end
   
-  
+  test "should retrun integer"
+    get "result/1"
+    assert_equal_to 1
+  end
 
 end
