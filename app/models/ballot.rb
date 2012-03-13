@@ -6,4 +6,5 @@ class Ballot < ActiveRecord::Base
   attr_accessible :name, :description, :start, :end
 
   scope :available_ballots, where("start < :today AND end > :today", {:today => Time.now})
+  scope :expired_ballots, where("end < :today", {:today => Time.now})
 end
