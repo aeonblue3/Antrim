@@ -4,6 +4,4 @@ class Ballot < ActiveRecord::Base
   validates_presence_of :name, :description, :start, :end
   #scope :available_ballots, lambda { where self.start.past?, true}
   attr_accessible :name, :description, :start, :end
-
-  scope :available_ballots, where("start < :today AND end > :today", {:today => Time.now})
 end

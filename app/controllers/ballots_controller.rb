@@ -3,7 +3,7 @@ class BallotsController < InheritedResources::Base
   before_filter
   
   def index
-    @ballot = Ballot.where("start < :today AND end > :today", {:today => Time.now})
+    @ballot = Ballot.available_ballots
   end
 
   def show
