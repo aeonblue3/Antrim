@@ -1,8 +1,10 @@
 %h2 Listing ballots
 %div
-	-@ballot.each do |ballot|
-		%p.ballot
-			=link_to ballot.name, ballot
-			%span
-				Expires in 
-				=distance_of_time_in_words_to_now ballot.end
+  -if @ballot.empty?
+    %p No Ballots
+  -@ballot.each do |ballot|
+    %p.ballot
+      =link_to ballot.name, ballot
+      %span
+        Expires in 
+        =distance_of_time_in_words_to_now ballot.end

@@ -1,11 +1,27 @@
-%h2 Results for Closed Ballots
-
+%h2 Results
+%h3 Active Ballots
 %div
-	-@ballots.each do |ballot|
-		%p.ballot
-			%a{href: "result/#{ballot.id}"}
-				=ballot.name
-			%span
-				Expired 
-				=distance_of_time_in_words_to_now ballot.end 
-				ago
+  -if @active_ballots.empty?
+    %p No Ballots
+  -@active_ballots.each do |ballot|
+    %p
+      %i.icon-signal      
+      %a{href: "result/#{ballot.id}"}
+        =ballot.name
+        %span
+          Expired 
+          =distance_of_time_in_words_to_now ballot.end 
+          ago
+%h3 Expired Ballots
+%div
+  -if @expired_ballots.empty?
+    %p No Ballots
+  -@expired_ballots.each do |ballot|
+    %p
+      %i.icon-signal      
+      %a{href: "result/#{ballot.id}"}
+        =ballot.name
+        %span
+          Expired 
+          =distance_of_time_in_words_to_now ballot.end 
+          ago

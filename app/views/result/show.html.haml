@@ -1,7 +1,20 @@
 %h2
-	Results for 
-	%em
-		=@name
+  Results for 
+  %em
+    =@name
 %section
-	-@question_text.each do |q|
-		=q.question_text
+  -@question_text.each do |q|
+    %p
+      %strong
+        =q.question_text
+      -q.answers.each do |a|
+        %p.note
+          Votes: 
+          =a.count.nil? ? 0 : a.count
+          \/
+          =answer_count q.id
+        %p
+          =a.answer_text
+        .progress.progress-info.progress-striped
+          .bar{:style => "width: #{normalize_answer_count(a.count, q.id)}%;"}
+
