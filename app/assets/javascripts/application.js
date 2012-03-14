@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-// Messages
+//= require twitter/bootstrap
+//= require_directory .

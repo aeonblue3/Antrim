@@ -1,4 +1,9 @@
 Antrim::Application.routes.draw do
+  get "result", to: 'result#index'
+
+#  get "result/show"
+  match "/result/:id" => "result#show"
+
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
@@ -7,8 +12,8 @@ Antrim::Application.routes.draw do
   resources :sessions
 
   resources :ballots, :only => [:index, :show]
-
-  get "home/index"
+  
+  get "home", to: "home#index"
 
   match "/ballots/:id" => "ballots#update"
   

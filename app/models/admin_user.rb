@@ -9,6 +9,8 @@ class AdminUser < ActiveRecord::Base
 
   #after_create { |admin| admin.send_reset_password_instructions }
 
+  validates_uniqueness_of :email
+  
   def password_required?
     new_record? ? false : super
   end

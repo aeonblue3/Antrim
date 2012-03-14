@@ -1,0 +1,7 @@
+%h2
+	Results for 
+	%em
+		=@name
+%section
+	-@question_text.each do |q|
+		=q.question_text

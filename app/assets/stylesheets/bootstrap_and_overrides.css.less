@@ -1,0 +1,41 @@
+@import "twitter/bootstrap/bootstrap";
+@font-face {
+  font-family: 'Kells SD';
+  src: font-url('Kells_SD-webfont.eot');
+  src: local('Kells SD'), font-url('Kells_SD-webfont.eot?#iefix') format("embedded-opentype"), font-url('Kells_SD-webfont.woff') format("woff"), font-url('Kells_SD-webfont.ttf') format("truetype"), font-url('Kells_SD-webfont.svg#MerriweatherRegular') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+	background: url("bg.png") repeat;
+}
+#main-header {
+	background: url("antrim-header.png") top no-repeat;
+	height: 300px;
+}
+#main-header h1 {
+	text-align: center;
+	margin: 0;
+	color: #DC692E;
+	text-shadow: 0px 0px 10px #000, 0px 0px 10px #000;
+	font-size: 4em;
+	font-family: 'Kells SD';
+	padding-top: 200px;
+}
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
