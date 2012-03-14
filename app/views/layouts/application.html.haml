@@ -26,6 +26,8 @@
 									=link_to "Blog", posts_path
 								%li
 									=link_to "Ballots", ballots_path
+								%li
+									=link_to "Results", result_path
 								-if current_user
 									%li.dropdown
 										%a{:href => "#", :class => "dropdown-toggle", "data-toggle" => "dropdown"}
