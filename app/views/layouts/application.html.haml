@@ -28,6 +28,7 @@
 									=link_to "Ballots", ballots_path
 								%li
 									=link_to "Results", result_path
+								%li.divider-vertical
 								-if current_user
 									%li.dropdown
 										%a{:href => "#", :class => "dropdown-toggle", "data-toggle" => "dropdown"}
@@ -49,4 +50,8 @@
 							%a.close{"data-dismiss" => "alert"} &times;
 							=msg
 					=yield
+			.row
+				.span12
+					%p.note{style: "text-align: center; float: none;"}
+						All Rights Reserved, &copy; 2012
 	=javascript_include_tag "application"

@@ -3,7 +3,8 @@
   -if @ballot.empty?
     %p No Ballots
   -@ballot.each do |ballot|
-    %p.ballot
+    %p
+      %i.icon-list-alt
       =link_to ballot.name, ballot
       %span
         Expires in 

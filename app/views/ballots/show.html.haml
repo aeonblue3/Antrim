@@ -1,28 +1,26 @@
 %p{:id => "notice"}
-	=notice
+  =notice
 #ballot
-	%p
-		%b Ballot Name: 
-		%span.note
-			This ballot started
-			=distance_of_time_in_words_to_now @ballot.start
-			ago and will expire
-			=distance_of_time_in_words_to_now @ballot.end
-			from today.
-		=@ballot.name
-	%p
-		%b Description: 
-		=@ballot.description
-	%p
-		=form_tag do
-			-@ballot.questions.each do |q|
-				%ul
-					%li.question
-						=q.question_text
-						%br/
-						-q.answers.each do |a|
-							=radio_button_tag("answer[#{a.id}]", a.answer_text)
-							=label_tag(a.answer_text)
-							%br/
-			=submit_tag "Submit"
-=link_to 'Back', ballots_path
+  %p
+    %b Ballot Name: 
+    %span.note
+      This ballot started
+      =distance_of_time_in_words_to_now @ballot.start
+      ago and will expire in
+      =distance_of_time_in_words_to_now @ballot.end
+    =@ballot.name
+    %p
+      %b Description: 
+      =@ballot.description
+    =form_tag nil, {class: "horizontal_form"} do
+      -@ballot.questions.each do |q|
+        %p
+          %strong
+            =q.question_text
+        -q.answers.each do |a|
+          %label.radio
+            =a.answer_text
+            =radio_button_tag("answer[#{a.id}]", a.answer_text)
+      =submit_tag "Submit", {class: "btn btn-primary"}
+      =button_tag "Reset", {type: "reset", class: "btn btn-danger"}
+      =link_to 'Back', ballots_path, class: "btn"

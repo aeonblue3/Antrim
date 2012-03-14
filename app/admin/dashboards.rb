@@ -40,5 +40,18 @@ ActiveAdmin::Dashboards.build do
   #
   # section "Membership Summary", :if => :memberships_enabled?
   # section "Membership Summary", :if => Proc.new { current_admin_user.account.memberships.any? }
-
+  section "Active Ballots" do
+    ul do
+      Ballot.available_ballots.each do |ballot|
+        li link_to(ballot.name, admin_ballot_path(ballot.id))
+      end
+    end
+  end
+  section "Recent Posts" do
+    ul do
+      Post.recent.limit(5).collect do |post|
+        li link_to(post.title, admin_post_path(post))
+      end
+    end
+  end
 end

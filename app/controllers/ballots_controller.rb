@@ -7,10 +7,9 @@ class BallotsController < InheritedResources::Base
   end
 
   def show
-    if current_user.ballots.split(':').include?("#{params[:id]}")
+    if @current_user.has_voted?
       redirect_to root_url, alert: "You have already voted in this ballot!"
     end
-    
     @ballot = Ballot.find params[:id]
   end
   def new
@@ -48,6 +47,6 @@ class BallotsController < InheritedResources::Base
       a.save
     end
     params = nil
-    redirect_to root_url, alert: "Failed to submit!"
+    redirect_to root_url, notice: "Successfully Submitted!"
   end
 end
