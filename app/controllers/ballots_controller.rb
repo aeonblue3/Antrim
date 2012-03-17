@@ -1,13 +1,12 @@
 class BallotsController < InheritedResources::Base
   before_filter :authorize, only: [:show, :update]
-  before_filter
-  
+
   def index
     @ballot = Ballot.available_ballots
   end
 
   def show
-    if @current_user.has_voted?
+    if @current_user.has_voted? params[:id]
       redirect_to root_url, alert: "You have already voted in this ballot!"
     end
     @ballot = Ballot.find params[:id]
@@ -15,38 +14,19 @@ class BallotsController < InheritedResources::Base
   def new
     @ballot = Ballot.new
     
-    3.times do
-      questions = @ballot.questions.build
-      4.times { questions.answers.build }
-    end
-    
     respond_to do |format|
       format.html # new.html.haml
       format.json { render json: @ballot }
     end
   end
   def update
-    if current_user.ballots.nil?
-      current_user.ballots = params[:id]
-      current_user.save
-    elsif current_user.ballots.split(':').include?("#{params[:id]}")
-      redirect_to root_url, alert: "You have already voted in this ballot!"
-    else
-      current_user.ballots += ":#{params[:id]}"
-      current_user.save
-    end
-    
     @posted = params[:answer]
     @posted.each do |key, value|
       a = Answer.find key
-      if a.count.nil?
-        a.count = 1
-      else
-        a.count += 1
-      end
+      a.count.nil? ? a.count = 1 : a.count += 1
       a.save
     end
-    params = nil
-    redirect_to root_url, notice: "Successfully Submitted!"
+    @current_user.update_voting_status params[:id]
+    redirect_to root_url, notice: "Successfully Submitted!!"
   end
 end

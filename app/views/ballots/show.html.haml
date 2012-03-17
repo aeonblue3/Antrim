@@ -13,6 +13,7 @@
       %b Description: 
       =@ballot.description
     =form_tag nil, {class: "horizontal_form"} do
+      %input{type: "hidden", name: "id", value: params[:id]}/
       -@ballot.questions.each do |q|
         %p
           %strong
