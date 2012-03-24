@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :key
   
   attr_accessible :key, :ballots
-  def has_voted? id
+  def hssas_voted? id
     if self.ballots.nil?
       return false
     elsif id.in? self.ballots.split(':')

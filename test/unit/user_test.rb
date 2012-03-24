@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "should test voter status" do
-    current_user = User.find_by_key 123456
-    assert_true current_user.has_voted?
+  test "status should be false" do
+    user = User(:one)
+    user.has_voted? Ballot(:one).id
   end
   # test "the truth" do
   #   assert true

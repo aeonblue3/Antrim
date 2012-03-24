@@ -1,9 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  question_text: MyString
+  id: 1
+  question_text: "What time?"
   ballot_id: 1
 
 two:
-  question_text: MyString
+  id: 2
+  question_text: "What day is it?"
   ballot_id: 1
+
+three:
+  id: 3
+  question_text: "How many?"
+  ballot_id: 1
+
+four:
+  id: 4
+  question_text: "MyString"
+  ballot_id: 2
+
+five:
+  id: 5
+  question_text: "MyString"
+  ballot_id: 2
+
+six:
+  id: 6
+  question_text: "MyString"
+  ballot_id: 2

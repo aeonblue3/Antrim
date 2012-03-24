@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  key: 1
-  ballots: MyText
+  id: 1
+  key: 123456
+  ballots: 1:2
 
 two:
-  key: 1
-  ballots: MyText
+  id: 2
+  key: 654321
+  ballots: 

@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 1
+  name: Test Ballot
+  description: A test ballot
   start: 2012-03-03 16:12:16
-  end: 2012-03-03 16:12:16
+  end: 2012-03-09 16:12:16
 
 two:
-  name: MyString
-  start: 2012-03-03 16:12:16
-  end: 2012-03-03 16:12:16
+  id: 2
+  name: Second Test
+  description: Another awesome test
+  start: 2012-03-04 16:12:16
+  end: 2012-03-30 16:12:16

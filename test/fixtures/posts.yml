@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  title: MyString
-  content: MyText
+  id: 1
+  name: Peter Griffin
+  title: Boner Move
+  content: "I hope this move won't be a boner"
   publish: false
 
 two:
-  name: MyString
-  title: MyString
-  content: MyText
-  publish: false
+  id: 2
+  name: Jim Samson
+  title: Taco Bell
+  content: I hate Taco Bell dood.
+  publish: true

@@ -1,9 +1,61 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  answer_text: MyString
+  id: 1
+  answer_text: MyStrqd qing
   question_id: 1
 
 two:
-  answer_text: MyString
+  id: 2
+  answer_text: MySt ring
   question_id: 1
+
+one:
+  id: 3
+  answer_text: My String
+  question_id: 2
+
+two:
+  id: 4
+  answer_text: MyStringdcddq dw
+  question_id: 2
+
+one:
+  id: 5
+  answer_text: MyString
+  question_id: 3
+
+two:
+  id: 6
+  answer_text: MyStringqwqwqw
+  question_id: 3
+
+one:
+  id: 7
+  answer_text: MyStringwww
+  question_id: 4
+
+two:
+  id: 8
+  answer_text: MyStriaang
+  question_id: 4
+
+one:
+  id: 9
+  answer_text: MyStringadsfafdw
+  question_id: 5
+
+two:
+  id: 10
+  answer_text: MyStrindg
+  question_id: 5
+
+one:
+  id: 11
+  answer_text: MyfafafString
+  question_id: 6
+
+two:
+  id: 12
+  answer_text: MxyString
+  question_id: 6
