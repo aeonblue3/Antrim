@@ -6,4 +6,9 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "session should find user" do
+  	user = FactoryGirl.create(:user)
+  	assert !user.nil?
+  end
+
 end

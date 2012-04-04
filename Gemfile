@@ -29,6 +29,7 @@ end
 gem 'jquery-rails'
 gem 'activeadmin'
 
+gem 'factory_girl_rails', group: :test
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 gem 'turn'

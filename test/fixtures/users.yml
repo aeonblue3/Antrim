@@ -1,11 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  id: 1
-  key: 123456
-  ballots: 1:2
-
-two:
-  id: 2
-  key: 654321
-  ballots: 

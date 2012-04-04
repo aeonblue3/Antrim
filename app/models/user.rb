@@ -3,9 +3,7 @@ class User < ActiveRecord::Base
   
   attr_accessible :key, :ballots, :id, :created_at, :updated_at
   def has_voted? id
-    if self.ballots.nil?
-      return false
-    elsif id.in? self.ballots.split(':')
+    if id.in? self.ballots.split(':')
       return true
     else
       return false
