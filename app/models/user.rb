@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :votes
+  has_many :ballots, through: :votes
   validates_uniqueness_of :key
   
   attr_accessible :key, :ballots, :id, :created_at, :updated_at
@@ -11,11 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def update_voting_status ballot_id
-    if self.ballots.nil? or self.ballots.empty?
-      self.ballots = ballot_id
-    else
-      self.ballots += ":#{ballot_id}"
-    end
+    self.ballots.push(Ballot.find_by_id(ballot_id))
     self.save
   end
 end

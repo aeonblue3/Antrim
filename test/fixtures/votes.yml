@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  ballot_id: 1
+  vote_date: 2012-04-06 12:39:01
+
+two:
+  user_id: 1
+  ballot_id: 1
+  vote_date: 2012-04-06 12:39:01
